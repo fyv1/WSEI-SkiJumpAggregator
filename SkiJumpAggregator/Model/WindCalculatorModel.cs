@@ -23,12 +23,13 @@ namespace SkiJumpAggregator.Model
             
         }
 
+        /*
         public double CalculateToPoints(double score)
         {
             // return points from RoundUp() divided by PointsFromHS()
             return;
         }
-
+    */
 
 
         public event PropertyChangedEventHandler PropertyChanged;
