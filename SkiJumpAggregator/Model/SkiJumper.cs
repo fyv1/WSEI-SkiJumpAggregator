@@ -13,6 +13,7 @@ namespace SkiJumpAggregator.Model
         private String country { get; set; }
         private bool ifAdded { get; set; }
         private double rating { get; set; }
+        public List<Competition> competitions = new List<Competition>();
 
         public SkiJumper(int fisId, String name, String country, bool ifAdded)
         {
@@ -23,6 +24,10 @@ namespace SkiJumpAggregator.Model
             this.rating = 1000.0; // default rating
         }
 
+        public void addStandings(Competition entry)
+        {
+            this.competitions.Add(entry);
+        }
 
         public override string ToString()
         {
