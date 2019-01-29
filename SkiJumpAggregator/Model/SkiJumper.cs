@@ -10,15 +10,17 @@ namespace SkiJumpAggregator.Model
     {
         private int fisId { get; set; }
         private String name { get; set; }
+        private String surname { get; set; }
         private String country { get; set; }
         private bool ifAdded { get; set; }
         private double rating { get; set; }
         public List<Competition> competitions = new List<Competition>();
 
-        public SkiJumper(int fisId, String name, String country, bool ifAdded)
+        public SkiJumper(int fisId, String name, String surname, String country, bool ifAdded)
         {
             this.fisId = fisId;
             this.name = name;
+            this.surname = surname;
             this.country = country;
             this.ifAdded = ifAdded;
             this.rating = 1000.0; // default rating
