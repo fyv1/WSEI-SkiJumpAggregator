@@ -1,0 +1,98 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+
+namespace FIS_web_scraper
+{
+    class skiJumper
+    {
+        public int id {get; set;}
+        public string name { get; set; }
+        public string surname { get; set; }
+        public string nationality { get; set; }
+        public List<standings> standings = new List<standings>();
+
+        public skiJumper(int Id, string Name, string Surname, string Nationality)
+        {
+            this.id = Id;
+            this.name = Name;
+            this.surname = Surname;
+            this.nationality = Nationality;
+        }
+        public void AddStanding(standings entry)
+        {
+            this.standings.Add(entry);
+        }
+    }
+    class standings
+    {
+        public string cupName { get; set; }
+        public string place { get; set; }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<skiJumper> jumpers = new List<skiJumper>();
+
+            HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
+            HtmlAgilityPack.HtmlDocument StandingsDoc = web.Load("https://www.fis-ski.com/DB/ski-jumping/cup-standings.html");
+           
+            var JumperId = StandingsDoc.DocumentNode.SelectNodes("//a[contains(@class, 'table-row reset-padding')]").ToList();
+            var HeaderNames = StandingsDoc.DocumentNode.SelectNodes("//div[contains(@class, 'g-xs-10 g-sm-9 g-md-4 g-lg-4 justify-left bold align-xs-top')]").ToList();
+            var Nationality = StandingsDoc.DocumentNode.SelectNodes("//span[contains(@class, 'country__name-short')]").ToList();
+            //var  = doc.DocumentNode.SelectNodes("//span[contains(@class, 'country__name-short')]").ToList();
+
+            Regex fisIdRegex = new Regex(@"[0-9]{3,6}");
+            for (int i = 0; i < HeaderNames.Count; i++)
+            {
+                string jumperLink = JumperId[i].Attributes["href"].Value;
+                string fisIdString = fisIdRegex.Match(jumperLink).Value.ToString();
+                int fisId = int.Parse(fisIdString);
+                skiJumper jumper = new skiJumper(fisId, parseName(HeaderNames[i].InnerText), parseSurname(HeaderNames[i].InnerText), Nationality[i].InnerText);
+                jumpers.Add(jumper);
+
+                //standings
+
+                Console.WriteLine(jumper.name);
+                HtmlAgilityPack.HtmlDocument JumperDoc = web.Load("https://www.fis-ski.com/DB/general/athlete-biography.html?sectorcode=JP&competitorid="+fisId+"&type=result");
+                var cupNames = JumperDoc.DocumentNode.SelectNodes("//div[contains(@class, 'g-md g-lg justify-left hidden-sm-down')]").ToList();
+                var cupStanding = JumperDoc.DocumentNode.SelectNodes("//div[contains(@class, 'g-xs-24 g-sm g-md g-lg justify-right')]").ToList();
+                for (int a = 0; a < 3; a++)
+                    {
+                    Console.WriteLine(a+" - "+cupNames[a].InnerText+" - "+ cupStanding[a].InnerText);
+                    }   
+
+                
+            }
+
+
+
+            foreach (skiJumper jumper in jumpers)
+            {
+                Console.WriteLine(jumper.id + " -> " + jumper.name + " , " + jumper.surname + " , " + jumper.nationality);
+                File.WriteAllText("test.txt", jumper.id + " -> " + jumper.name + " , " +jumper.surname+ " , " + jumper.nationality);
+            }
+
+            Console.ReadKey();
+
+            string parseSurname(string dirty)
+            {
+                Regex regex = new Regex(@"[A-z]\w+");
+                return regex.Match(dirty).NextMatch().Value;
+            }
+
+            string parseName(string dirty)
+            {
+                Regex regex = new Regex(@"[A-z]\w+");
+                return regex.Match(dirty).Value;
+            }
+        }
+    }
+}
