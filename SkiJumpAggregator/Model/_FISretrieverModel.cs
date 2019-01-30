@@ -11,6 +11,7 @@ namespace SkiJumpAggregator
     {
         public void getFisData()
         {
+          /*  
             HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
             HtmlAgilityPack.HtmlDocument doc = web.Load("https://www.fis-ski.com/DB/ski-jumping/cup-standings.html");
 
@@ -27,6 +28,7 @@ namespace SkiJumpAggregator
                 Console.WriteLine("{0} -> {1}, {2}", fisId, HeaderNames[i].InnerText.ToString(), Nationality[i].InnerText.ToString());
             }
             Console.ReadKey();
+      */  
         }
     }
 }

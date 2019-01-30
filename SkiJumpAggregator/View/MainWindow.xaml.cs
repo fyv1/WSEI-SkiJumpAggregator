@@ -15,13 +15,20 @@ using System.Windows.Shapes;
 namespace SkiJumpAggregator.View
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainPage.xaml
+    /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
-    public partial class MainPage : Window
+    public partial class MainWindow : Window
     {
-        public MainPage()
+        public MainWindow()
         {
             InitializeComponent();
+
+            Loaded += MenuPageLoaded;
+        }
+
+        private void MenuPageLoaded(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new MenuPage());
         }
     }
 }

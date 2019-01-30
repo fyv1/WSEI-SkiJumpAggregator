@@ -13,16 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SkiJumpAggregator
+namespace SkiJumpAggregator.View
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy MenuPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MenuPage : Page
     {
-        public MainWindow()
+        public MenuPage()
         {
             InitializeComponent();
+        }
+
+        private void WindCalcBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new WindCalculatorPage());
         }
     }
 }

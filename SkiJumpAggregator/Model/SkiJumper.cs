@@ -33,7 +33,7 @@ namespace SkiJumpAggregator.Model
 
         public override string ToString()
         {
-            return name + " " + country;
+            return surname + " " + name + " " + country;
         }
     }
 }
