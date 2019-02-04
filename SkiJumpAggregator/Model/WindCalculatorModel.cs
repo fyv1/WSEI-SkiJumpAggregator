@@ -56,7 +56,7 @@ namespace SkiJumpAggregator.Model
            }
             //use switch case with pattern from wiki
             
-        }
+        
 
         
         public double CalculateToPoints(double score)
@@ -68,4 +68,4 @@ namespace SkiJumpAggregator.Model
 
         public event PropertyChangedEventHandler PropertyChanged;
     }
-
+    }
