@@ -77,6 +77,9 @@
     <Compile Include="Model\SkiJumper.cs" />
     <Compile Include="Model\_FISretrieverModel.cs" />
     <Compile Include="ViewModel\ViewModelMain.cs" />
+    <Compile Include="View\KoSimulatorPage.xaml.cs">
+      <DependentUpon>KoSimulatorPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -90,6 +93,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\KoSimulatorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

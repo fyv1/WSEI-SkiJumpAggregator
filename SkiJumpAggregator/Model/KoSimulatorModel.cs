@@ -5,8 +5,10 @@ namespace SkiJumpAggregator.Model
 {
     public class KoSimulatorModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
 
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
         
     }
 }

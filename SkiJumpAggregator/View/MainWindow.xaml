@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SkiJumpAggregator.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="450">
+        Title="WSEI Ski Jumping Aggregator" Height="300" Width="450">
     <Frame x:Name="frame" Content="Frame" HorizontalAlignment="Left" Height="290" VerticalAlignment="Top" Width="440" Margin="0,0,0,-21" NavigationUIVisibility="Hidden"/>
 
 </Window>
