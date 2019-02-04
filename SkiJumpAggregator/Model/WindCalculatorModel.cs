@@ -53,6 +53,7 @@ namespace SkiJumpAggregator.Model
             else if (K >= 170){
                 return 1.2;
             }
+            else throw new HillTooSmallException("Skocznia za mała");
 
         }
             //use switch case with pattern from wiki
