@@ -78,6 +78,7 @@
     <Compile Include="Model\SkiJumper.cs" />
     <Compile Include="Model\_FISretrieverModel.cs" />
     <Compile Include="ViewModel\ViewModelMain.cs" />
+    <Compile Include="ViewModel\WindCalculatorViewModel.cs" />
     <Compile Include="View\KoSimulatorPage.xaml.cs">
       <DependentUpon>KoSimulatorPage.xaml</DependentUpon>
     </Compile>
