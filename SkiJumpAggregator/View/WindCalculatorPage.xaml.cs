@@ -51,7 +51,8 @@ namespace SkiJumpAggregator.View
             }
             catch
             {
-                    MessageBox.Show("Wystąpił błąd - podaj prawidłowe dane", "Błędne dane!");
+                MessageBox.Show("Wystąpił błąd - podaj prawidłowe dane", "Błędne dane!");
+                this.DataContext = this;
             }
            
 
