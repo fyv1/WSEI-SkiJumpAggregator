@@ -10,7 +10,7 @@ namespace SkiJumpAggregator.Model
 
         public WindCalculatorModel() { }
 
-        private double Formula(int HS, double avgSpeed)
+        public double Formula(int HS, double avgSpeed)
         {
             return score = avgSpeed * (HS - 36)/20;
         }
