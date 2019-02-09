@@ -21,11 +21,13 @@ namespace SkiJumpAggregator.View
     /// </summary>
     public partial class WindCalculatorPage : Page
     {
+        WindCalculatorViewModel windCalculatorViewModel = new WindCalculatorViewModel();
         public WindCalculatorPage()
         {
 
             InitializeComponent();
             
+            this.DataContext = this;
         }
 
         private void ReturnBtn_Click(object sender, RoutedEventArgs e)
@@ -35,16 +37,28 @@ namespace SkiJumpAggregator.View
 
         }
 
-        // TODO: fix DataContext
+     
 
-       /* private void CalculateBtn_Click(object sender, RoutedEventArgs e)
+       private void CalculateBtn_Click(object sender, RoutedEventArgs e)
         {
-            WindCalculatorViewModel windCalculatorViewModel = new WindCalculatorViewModel();
-            this.DataContext = windCalculatorViewModel;
-            windCalculatorViewModel.CalculateButtonPressed();
+            try
+            {
 
-            
-        }*/
+                windCalculatorViewModel.InputHs = Int32.Parse(HSin.Text);
+                windCalculatorViewModel.InputK = Int32.Parse(Kin.Text);
+                windCalculatorViewModel.InputAvgSpeed = Convert.ToDouble(Avgin.Text);
+                windCalculatorViewModel.CalculateButtonPressed();
+            }
+            catch
+            {
+                    MessageBox.Show("Wystąpił błąd - podaj prawidłowe dane", "Błędne dane!");
+            }
+           
+
+            this.DataContext = windCalculatorViewModel;
+
+        }
+
 
     }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using SkiJumpAggregator.Model;
 using System.Windows.Controls;
+using System.Windows;
 
 namespace SkiJumpAggregator.ViewModel
 {
@@ -49,11 +50,19 @@ namespace SkiJumpAggregator.ViewModel
 
         public void CalculateButtonPressed()
         {
-           this.CalculatedPointsProperty = windCalculator.CalculateToPoints(InputK, InputHs, InputAvgSpeed).ToString();
-
+            try
+            {
+                this.CalculatedPointsProperty = windCalculator.CalculateToPoints(InputK, InputHs, InputAvgSpeed).ToString();
+            }
+            catch (HillTooSmallException e)
+            {
+                MessageBox.Show(e.Message, "Błędne dane!");
+            }
          //   this.CalculatedPointsProperty = windCalculator.CalculateToPoints(200, 250, 1.0d).ToString();
 
         }
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
