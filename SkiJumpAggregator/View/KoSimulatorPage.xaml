@@ -11,7 +11,9 @@
     <Grid>
         <Button Click="ReturnBtn_Click" Content="Powrót" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.053,-2.175" />
 
-        <ScrollViewer HorizontalAlignment="Left" Height="216" Margin="10,35,0,0" VerticalAlignment="Top" Width="430"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="216" Margin="10,35,0,0" VerticalAlignment="Top" Width="430">
+            <ItemsControl Name="JumpersList" />
+        </ScrollViewer>
 
     </Grid>
 </Page>

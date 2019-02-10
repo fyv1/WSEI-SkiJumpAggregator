@@ -49,10 +49,10 @@ namespace SkiJumpAggregator.View
                 windCalculatorViewModel.InputAvgSpeed = Convert.ToDouble(Avgin.Text);
                 windCalculatorViewModel.CalculateButtonPressed();
             }
-            catch //(IncorrectDataException e)
-            {
+            catch //(IncorrectDataException er)
+            { 
                 MessageBox.Show("Wystąpił błąd - podaj prawidłowe dane", "Błędne dane!");
-                // MessageBox.Show(e.Message, "Błędne dane!");
+               // MessageBox.Show(er.Message, "Błędne dane!");
                 this.DataContext = this;
             }
            

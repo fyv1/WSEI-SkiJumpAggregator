@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace SkiJumpAggregator.Model
 {
-    class Competition
+    public class Competition
     {
-        private int id { get; set; }
-        private int standings { get; set; }
+        private string id { get; set; }
+        private string standings { get; set; }
 
-        public Competition(int id, int standings)
+        public Competition(string id, string standings)
         {
             this.id = id;
             this.standings = standings;
         }
 
+        public override string ToString()
+        {
+            return  id +" "+ standings;
+        }
 
     }
 }

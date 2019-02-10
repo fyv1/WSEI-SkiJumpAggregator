@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SkiJumpAggregator.ViewModel;
 
 namespace SkiJumpAggregator.View
 {
@@ -20,10 +21,19 @@ namespace SkiJumpAggregator.View
     /// </summary>
     public partial class KoSimulatorPage : Page
     {
+        KoViewModel ko = new KoViewModel();
+        
         public KoSimulatorPage()
         {
             InitializeComponent();
+
+
+            JumpersList.ItemsSource = ko.JumperList;
+
+
         }
+
+       
 
         private void ReturnBtn_Click(object sender, RoutedEventArgs e)
         {

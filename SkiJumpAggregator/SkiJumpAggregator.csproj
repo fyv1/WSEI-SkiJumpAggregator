@@ -74,9 +74,11 @@
     </ApplicationDefinition>
     <Compile Include="Model\Competition.cs" />
     <Compile Include="Model\Exceptions\HillTooSmallException.cs" />
+    <Compile Include="Model\Exceptions\IncorrectDataException.cs" />
     <Compile Include="Model\RatingCalculatorModel.cs" />
     <Compile Include="Model\SkiJumper.cs" />
     <Compile Include="Model\_FISretrieverModel.cs" />
+    <Compile Include="ViewModel\KoViewModel.cs" />
     <Compile Include="ViewModel\ViewModelMain.cs" />
     <Compile Include="ViewModel\WindCalculatorViewModel.cs" />
     <Compile Include="View\KoSimulatorPage.xaml.cs">

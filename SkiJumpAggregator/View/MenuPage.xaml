@@ -10,7 +10,10 @@
 
     <Grid>
         <Button x:Name="WindCalcBtn" Content="Przelicznik wiatru" HorizontalAlignment="Left" Margin="51,97,0,0" VerticalAlignment="Top" Width="140" Height="70" Click="WindCalcBtn_Click"/>
+        <!--
         <Button x:Name="KoBtn" Content="Symulator par KO" HorizontalAlignment="Left" Margin="251,97,0,0" VerticalAlignment="Top" Width="140" Height="70" Click="KoBtn_Click"/>
+        --> 
+        <Button x:Name="KoBtn" Content="Klasyfikacja PŚ" HorizontalAlignment="Left" Margin="251,97,0,0" VerticalAlignment="Top" Width="140" Height="70" Click="KoBtn_Click"/>
 
     </Grid>
 </Page>
