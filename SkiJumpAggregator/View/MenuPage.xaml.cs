@@ -29,5 +29,10 @@ namespace SkiJumpAggregator.View
         {
             this.NavigationService.Navigate(new WindCalculatorPage());
         }
+
+        private void KoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new KoSimulatorPage());
+        }
     }
 }

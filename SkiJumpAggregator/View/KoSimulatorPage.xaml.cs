@@ -24,5 +24,12 @@ namespace SkiJumpAggregator.View
         {
             InitializeComponent();
         }
+
+        private void ReturnBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            this.NavigationService.Navigate(new MenuPage());
+
+        }
     }
 }

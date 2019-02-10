@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace SkiJumpAggregator
 {
-    class retriever
+    class _FISretrieverModel
     {
         public void getFisData()
         {
