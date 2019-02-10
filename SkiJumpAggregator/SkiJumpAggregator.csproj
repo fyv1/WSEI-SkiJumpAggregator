@@ -73,10 +73,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Competition.cs" />
+    <Compile Include="Model\Exceptions\HillTooSmallException.cs" />
     <Compile Include="Model\RatingCalculatorModel.cs" />
     <Compile Include="Model\SkiJumper.cs" />
     <Compile Include="Model\_FISretrieverModel.cs" />
     <Compile Include="ViewModel\ViewModelMain.cs" />
+    <Compile Include="ViewModel\WindCalculatorViewModel.cs" />
     <Compile Include="View\KoSimulatorPage.xaml.cs">
       <DependentUpon>KoSimulatorPage.xaml</DependentUpon>
     </Compile>
@@ -150,6 +152,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\helpSign.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

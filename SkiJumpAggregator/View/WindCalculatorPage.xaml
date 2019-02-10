@@ -9,13 +9,26 @@
       Title="WindCalculatorPage">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="239*"/>
+        </Grid.RowDefinitions>
         <Label Content="Punkt HS skoczni" HorizontalAlignment="Left" Margin="48,29,0,0" VerticalAlignment="Top" Width="109" Height="23"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="198,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
-        <Label Content="Średnia prędkość wiatru" HorizontalAlignment="Left" Margin="48,68,0,0" VerticalAlignment="Top" Width="138" Height="24"/>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="198,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
-        <Button Content="Oblicz" HorizontalAlignment="Left" Margin="198,114,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.053,-2.175" />
-        <Label Content="Dodane punkty" HorizontalAlignment="Left" Margin="48,153,0,0" VerticalAlignment="Top" Width="109" Height="34"/>
-        <Button Content="Powrót" HorizontalAlignment="Left" Margin="48,222,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.053,-2.175" Click="ReturnBtn_Click" />
+        <TextBox Text="{Binding InputHs}" Name="HSin"  HorizontalAlignment="Left" Height="23" Margin="198,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+
+        <Label Content="Punkt K skoczni" HorizontalAlignment="Left" Margin="48,6.667,0,0" VerticalAlignment="Top" Width="138" Height="24" Grid.Row="1"/>
+        <TextBox Text="{Binding InputK}" Name="Kin" HorizontalAlignment="Left" Height="24" Margin="198,6.667,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Grid.Row="1"/>
+
+        <Label Content="Średnia prędkość wiatru" HorizontalAlignment="Left" Margin="48,41.667,0,0" VerticalAlignment="Top" Width="138" Height="24" Grid.Row="1"/>
+        <TextBox Text="{Binding InputAvgSpeed}" Name="Avgin"  HorizontalAlignment="Left" Height="24" Margin="198,41.667,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Grid.Row="1"/>
+
+        <Button Click="CalculateBtn_Click" Content="Oblicz" HorizontalAlignment="Left" Margin="198,83,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.053,-2.175" Grid.Row="1" />
+
+        <Label Content="Obliczone punkty" HorizontalAlignment="Left" Margin="48,108.667,0,0" VerticalAlignment="Top" Width="109" Height="34" Grid.Row="1"/>
+        <TextBlock Text="{Binding Path=CalculatedPointsProperty}" HorizontalAlignment="Left" Margin="198,114,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+
+        <Button Click="ReturnBtn_Click" Content="Powrót" HorizontalAlignment="Left" Margin="48,170.667,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.053,-2.175"  Grid.Row="1" />
+        <Image ToolTip="Wynik podaj z '.'. Jeżeli wiatr z tyłu, podaj '-' na początku" HorizontalAlignment="Left" Height="24" Margin="298,42,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Source="/SkiJumpAggregator;component/Resources/helpSign.jpg"/>
 
     </Grid>
 </Page>

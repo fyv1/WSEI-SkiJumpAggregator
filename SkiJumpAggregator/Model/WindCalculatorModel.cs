@@ -8,7 +8,9 @@ namespace SkiJumpAggregator.Model
         private double score{get; set;}
         private double points{get; set;}
 
-        private double Formula(int HS, double avgSpeed)
+        public WindCalculatorModel() { }
+
+        public double Formula(int HS, double avgSpeed)
         {
             return score = avgSpeed * (HS - 36)/20;
         }
@@ -27,7 +29,7 @@ namespace SkiJumpAggregator.Model
                 return 4.4;
             }
             else if (K >= 31 && K <= 34 ){
-                return 4;
+                return 4.0;
             }
             else if (K >= 35 && K <= 39 ){
                 return 3.6;
@@ -38,8 +40,8 @@ namespace SkiJumpAggregator.Model
             else if (K >= 50 && K <= 59 ){
                 return 2.8;
             }
-                else if (K >= 60 && K <= 69 ){
-                return  2.4;
+            else if (K >= 60 && K <= 69 ){
+                return 2.4;
             }
             else if (K >= 70 && K <= 79 ){
                 return 2.2;
@@ -53,6 +55,7 @@ namespace SkiJumpAggregator.Model
             else if (K >= 170){
                 return 1.2;
             }
+            else throw new HillTooSmallException("Skocznia za mała");
 
         }
             //use switch case with pattern from wiki

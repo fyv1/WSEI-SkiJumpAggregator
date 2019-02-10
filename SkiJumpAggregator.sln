@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiJumpAggregator", "SkiJumpAggregator\SkiJumpAggregator.csproj", "{228143F3-8B99-452A-9363-0D37FAE2944C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SJA_Test", "SJA_Test\SJA_Test.csproj", "{C0213E17-6494-42FA-BC8D-CEE4F0D67F97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{228143F3-8B99-452A-9363-0D37FAE2944C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{228143F3-8B99-452A-9363-0D37FAE2944C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{228143F3-8B99-452A-9363-0D37FAE2944C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0213E17-6494-42FA-BC8D-CEE4F0D67F97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0213E17-6494-42FA-BC8D-CEE4F0D67F97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0213E17-6494-42FA-BC8D-CEE4F0D67F97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0213E17-6494-42FA-BC8D-CEE4F0D67F97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
